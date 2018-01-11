@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Saves locally the high score
+        let highScore = UserDefaults.standard.integer(forKey: "highScore")
+        
+        if highScore == 0 {
+            print("Creating the local highScore")
+            UserDefaults.standard.set(0, forKey: "highScore")
+        }
+        
         return true
     }
 

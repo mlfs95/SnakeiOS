@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A52ACE922003CEE3006AEF4E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52ACE912003CEE3006AEF4E /* Enums.swift */; };
+		A52ACE9820057FC0006AEF4E /* LCDPHONE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A52ACE9720057F9C006AEF4E /* LCDPHONE.ttf */; };
+		A52ACE992006611B006AEF4E /* scoreboard.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A52ACE9320057662006AEF4E /* scoreboard.ttf */; };
 		A55A02A52001076F00DDFE8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02A42001076F00DDFE8C /* AppDelegate.swift */; };
 		A55A02A72001076F00DDFE8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02A62001076F00DDFE8C /* ViewController.swift */; };
 		A55A02AA2001076F00DDFE8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55A02A82001076F00DDFE8C /* Main.storyboard */; };
 		A55A02AC2001076F00DDFE8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55A02AB2001076F00DDFE8C /* Assets.xcassets */; };
 		A55A02AF2001076F00DDFE8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55A02AD2001076F00DDFE8C /* LaunchScreen.storyboard */; };
+		A55A02B9200271D000DDFE8C /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02B8200271D000DDFE8C /* Snake.swift */; };
+		A55A02BB2002787C00DDFE8C /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02BA2002787C00DDFE8C /* Food.swift */; };
+		A55A02BD20027AA500DDFE8C /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02BC20027AA500DDFE8C /* GameManager.swift */; };
+		A55A02BF20028D3300DDFE8C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02BE20028D3300DDFE8C /* GameViewController.swift */; };
+		A55A02C72002C00A00DDFE8C /* GameManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02C62002C00A00DDFE8C /* GameManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A52ACE912003CEE3006AEF4E /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		A52ACE9320057662006AEF4E /* scoreboard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = scoreboard.ttf; sourceTree = "<group>"; };
+		A52ACE9720057F9C006AEF4E /* LCDPHONE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LCDPHONE.ttf; sourceTree = "<group>"; };
 		A55A02A12001076F00DDFE8C /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55A02A42001076F00DDFE8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55A02A62001076F00DDFE8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +33,11 @@
 		A55A02AB2001076F00DDFE8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A55A02AE2001076F00DDFE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A55A02B02001076F00DDFE8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A55A02B8200271D000DDFE8C /* Snake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		A55A02BA2002787C00DDFE8C /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		A55A02BC20027AA500DDFE8C /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		A55A02BE20028D3300DDFE8C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		A55A02C62002C00A00DDFE8C /* GameManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A52ACE9520057F65006AEF4E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A52ACE9320057662006AEF4E /* scoreboard.ttf */,
+				A52ACE9720057F9C006AEF4E /* LCDPHONE.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		A55A02982001076F00DDFE8C = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +79,53 @@
 		A55A02A32001076F00DDFE8C /* Snake */ = {
 			isa = PBXGroup;
 			children = (
-				A55A02A42001076F00DDFE8C /* AppDelegate.swift */,
-				A55A02A62001076F00DDFE8C /* ViewController.swift */,
-				A55A02A82001076F00DDFE8C /* Main.storyboard */,
-				A55A02AB2001076F00DDFE8C /* Assets.xcassets */,
-				A55A02AD2001076F00DDFE8C /* LaunchScreen.storyboard */,
-				A55A02B02001076F00DDFE8C /* Info.plist */,
+				A55A02C020028D3F00DDFE8C /* Modal */,
+				A55A02C120028D4B00DDFE8C /* View */,
+				A55A02C220028D5000DDFE8C /* Controller */,
+				A55A02C320028D6800DDFE8C /* Supporting Files */,
 			);
 			path = Snake;
+			sourceTree = "<group>";
+		};
+		A55A02C020028D3F00DDFE8C /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				A55A02B8200271D000DDFE8C /* Snake.swift */,
+				A55A02BA2002787C00DDFE8C /* Food.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		A55A02C120028D4B00DDFE8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A55A02A82001076F00DDFE8C /* Main.storyboard */,
+				A55A02AD2001076F00DDFE8C /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A55A02C220028D5000DDFE8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A55A02A62001076F00DDFE8C /* ViewController.swift */,
+				A55A02BE20028D3300DDFE8C /* GameViewController.swift */,
+				A55A02BC20027AA500DDFE8C /* GameManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A55A02C320028D6800DDFE8C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A52ACE9520057F65006AEF4E /* fonts */,
+				A55A02AB2001076F00DDFE8C /* Assets.xcassets */,
+				A55A02B02001076F00DDFE8C /* Info.plist */,
+				A55A02A42001076F00DDFE8C /* AppDelegate.swift */,
+				A55A02C62002C00A00DDFE8C /* GameManagerDelegate.swift */,
+				A52ACE912003CEE3006AEF4E /* Enums.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +187,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52ACE992006611B006AEF4E /* scoreboard.ttf in Resources */,
 				A55A02AF2001076F00DDFE8C /* LaunchScreen.storyboard in Resources */,
+				A52ACE9820057FC0006AEF4E /* LCDPHONE.ttf in Resources */,
 				A55A02AC2001076F00DDFE8C /* Assets.xcassets in Resources */,
 				A55A02AA2001076F00DDFE8C /* Main.storyboard in Resources */,
 			);
@@ -136,7 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55A02B9200271D000DDFE8C /* Snake.swift in Sources */,
+				A55A02BD20027AA500DDFE8C /* GameManager.swift in Sources */,
 				A55A02A72001076F00DDFE8C /* ViewController.swift in Sources */,
+				A55A02C72002C00A00DDFE8C /* GameManagerDelegate.swift in Sources */,
+				A55A02BB2002787C00DDFE8C /* Food.swift in Sources */,
+				A55A02BF20028D3300DDFE8C /* GameViewController.swift in Sources */,
+				A52ACE922003CEE3006AEF4E /* Enums.swift in Sources */,
 				A55A02A52001076F00DDFE8C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,12 +348,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EQQQP3638J;
-				INFOPLIST_FILE = Snake/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Snake/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mlfs95.Snake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -291,12 +364,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EQQQP3638J;
-				INFOPLIST_FILE = Snake/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Snake/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mlfs95.Snake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
