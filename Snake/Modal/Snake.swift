@@ -71,9 +71,6 @@ class Snake {
             bodyX.append(headX)
             bodyY.append(headY)
             headX = headX - 1
-            
-        default:
-            break
         }
         
         if !ateFood {

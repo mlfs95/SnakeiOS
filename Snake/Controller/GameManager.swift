@@ -73,9 +73,6 @@ class GameManager {
                     snake.direction = directionToChange
                     lockedDirection = true
                 }
-                
-            default:
-                break
             }
         }
     }
@@ -210,9 +207,6 @@ class GameManager {
             
         case .left:
             delegate.draw(x: snake.headX, y: snake.headY, image: "headLeft")
-            
-        default:
-            break
         }
         
         // Unlocks the direction
