@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: UIViewController {
 
@@ -14,11 +15,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var snakeLabel: UILabel!
     
+    // MARK: - VARIABLES -
+    
+    var audioPlayer = AVAudioPlayer()
+    
     // MARK: - VIEWCONTROLLER METHODS -
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Gets the URL of the music
+        let filePath = Bundle.main.path(forResource: "snakeMusic", ofType: "mp3")
+        let fileURL = NSURL.fileURL(withPath: filePath!)
+        
+        // Sets up the music player correctly and starts playing the music
+        do {
+            audioPlayer = try AVAudioPlayer.init(contentsOf: fileURL, fileTypeHint: AVFileType.mp3.rawValue)
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.volume = 0.05
+            audioPlayer.play()
+        } catch {
+            print("Couldn't play the music")
+        }
+        
+        // Starts fadeIn/FadeOut animation of the label's title
         startFadeIn()
     }
     

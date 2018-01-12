@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class GameViewController: UIViewController, GameManagerDelegate {
 
@@ -24,6 +25,11 @@ class GameViewController: UIViewController, GameManagerDelegate {
     var imagesArray: [UIImageView]!
     
     var isPressed = false
+    
+    var pointAudioPlayer: AVAudioPlayer!
+    var looseAudioPlayer: AVAudioPlayer!
+    var pauseAudioPlayer: AVAudioPlayer!
+    var recordAudioPlayer: AVAudioPlayer!
     
     // MARK: - VIEWCONTROLLER METHODS -
     
@@ -71,6 +77,26 @@ class GameViewController: UIViewController, GameManagerDelegate {
         
         // Calls the method to start the Game
         GameManager.singleton.startGame()
+        
+        // Gets the URL of the sounds
+        let pointFileURL = NSURL.fileURL(withPath: Bundle.main.path(forResource: "pointSound", ofType: "wav")!)
+        let looseFileURL = NSURL.fileURL(withPath: Bundle.main.path(forResource: "looseSound", ofType: "wav")!)
+        let pauseFileURL = NSURL.fileURL(withPath: Bundle.main.path(forResource: "pauseSound", ofType: "wav")!)
+        let recordFileURL = NSURL.fileURL(withPath: Bundle.main.path(forResource: "recordSound", ofType: "wav")!)
+        
+        // Sets up the sounds player correctly
+        do {
+            pointAudioPlayer = try AVAudioPlayer(contentsOf: pointFileURL, fileTypeHint: AVFileType.wav.rawValue)
+            pointAudioPlayer.volume = 0.3
+            looseAudioPlayer = try AVAudioPlayer(contentsOf: looseFileURL, fileTypeHint: AVFileType.wav.rawValue)
+            looseAudioPlayer.volume = 0.3
+            pauseAudioPlayer = try AVAudioPlayer(contentsOf: pauseFileURL, fileTypeHint: AVFileType.wav.rawValue)
+            pauseAudioPlayer.volume = 0.3
+            recordAudioPlayer = try AVAudioPlayer(contentsOf: recordFileURL, fileTypeHint: AVFileType.wav.rawValue)
+            recordAudioPlayer.volume = 0.3
+        } catch {
+            print("Couldn't initialize the sounds")
+        }
     }
     
     // MARK: - BUTTONS ACTION -
@@ -94,6 +120,7 @@ class GameViewController: UIViewController, GameManagerDelegate {
                 exitButton.isHidden = false
                 pauseButton.setImage(UIImage(named: "resumeButton"), for: .normal)
                 isPressed = true
+                pauseAudioPlayer.play()
             }
             
         } else { // When the button is to restart the game
@@ -185,6 +212,7 @@ class GameViewController: UIViewController, GameManagerDelegate {
     /// Called when the snake ate the food
     func ateFood() {
         pointsTextView.text = String(GameManager.singleton.score)
+        pointAudioPlayer.play()
     }
     
     /// Called when the game ends
@@ -194,6 +222,9 @@ class GameViewController: UIViewController, GameManagerDelegate {
         if UserDefaults.standard.integer(forKey: "highScore") < GameManager.singleton.score {
             UserDefaults.standard.set(GameManager.singleton.score, forKey: "highScore")
             highScoreTextView.text = String(GameManager.singleton.score)
+            recordAudioPlayer.play()
+        } else {
+            looseAudioPlayer.play()
         }
         
         // Set buttons correctly

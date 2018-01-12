@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="piQ-ke-7jw">
-    <device id="retina3_5" orientation="landscape">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -24,29 +24,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Snake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFp-eU-23v">
-                                <rect key="frame" x="145" y="40" width="190" height="57"/>
+                                <rect key="frame" x="273" y="40" width="190" height="57"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="57"/>
                                 <color key="textColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recorde:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvI-56-BYs">
-                                <rect key="frame" x="183" y="140.5" width="114" height="23"/>
+                                <rect key="frame" x="311" y="187.66666666666666" width="114" height="23"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="23"/>
                                 <color key="textColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHF-km-sUy">
-                                <rect key="frame" x="232.5" y="178.5" width="15" height="23"/>
+                                <rect key="frame" x="360.66666666666669" y="225.66666666666666" width="15" height="23"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="23"/>
                                 <color key="textColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E86-ae-aVj">
-                                <rect key="frame" x="172" y="235" width="136" height="29"/>
+                                <rect key="frame" x="300" y="329" width="136" height="29"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="17"/>
                                 <state key="normal" title="intermediário">
                                     <color key="titleColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro3-RI-rIk">
-                                <rect key="frame" x="368" y="234.5" width="91" height="29"/>
+                                <rect key="frame" x="496" y="328.66666666666669" width="91" height="29"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="17"/>
                                 <state key="normal" title="Veterano">
                                     <color key="titleColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-tt-gr5">
-                                <rect key="frame" x="21" y="235.5" width="91" height="29"/>
+                                <rect key="frame" x="149" y="329.66666666666669" width="91" height="29"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="17"/>
                                 <state key="normal" title="Iniciante">
                                     <color key="titleColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -109,11 +109,11 @@
             <objects>
                 <viewController id="SPM-DZ-CbV" customClass="GameViewController" customModule="Snake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y89-Wz-hlB">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPj-FS-oB0">
-                                <rect key="frame" x="130" y="0.0" width="350" height="320"/>
+                                <rect key="frame" x="130" y="0.0" width="606" height="414"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vgU-l9-KDU">
@@ -122,7 +122,7 @@
                                 <color key="backgroundColor" red="0.32937228679656982" green="0.32943451404571533" blue="0.32936835289001465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlM-wG-mcG">
-                                <rect key="frame" x="0.0" y="0.0" width="130" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="414"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pontos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-OE-9lq">
                                         <rect key="frame" x="30" y="21" width="70" height="25"/>
@@ -131,13 +131,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melhor Pontuação" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bv-ir-VpD">
-                                        <rect key="frame" x="13" y="106" width="105" height="49.5"/>
+                                        <rect key="frame" x="13" y="106.00000000000001" width="105" height="49.666666666666671"/>
                                         <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="22"/>
                                         <color key="textColor" red="0.60739243030548096" green="0.79908162355422974" blue="0.049279659986495972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="400" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-M1-THo">
-                                        <rect key="frame" x="41" y="157.5" width="49" height="38"/>
+                                        <rect key="frame" x="41" y="157.66666666666666" width="49" height="38"/>
                                         <color key="backgroundColor" red="0.24310663342475891" green="0.24315488338470459" blue="0.24310359358787537" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="F7m-Pr-1Tn"/>
@@ -148,7 +148,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bce-1w-lhR">
-                                        <rect key="frame" x="48" y="266" width="34" height="34"/>
+                                        <rect key="frame" x="48" y="360" width="34" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="vpc-Ya-2Vn"/>
                                             <constraint firstAttribute="width" secondItem="bce-1w-lhR" secondAttribute="height" multiplier="1:1" id="x85-ZO-X4z"/>
@@ -170,7 +170,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0k-cQ-XTm">
-                                        <rect key="frame" x="48" y="212" width="34" height="34"/>
+                                        <rect key="frame" x="48" y="306" width="34" height="34"/>
                                         <state key="normal" title="Button" image="pauseButton"/>
                                         <connections>
                                             <action selector="pauseButtonPressed:" destination="SPM-DZ-CbV" eventType="touchUpInside" id="1OK-VC-QjM"/>

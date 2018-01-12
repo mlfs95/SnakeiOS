@@ -37,4 +37,5 @@ extension GameManagerDelegate {
     func ateFood() { print("the snake Ate food") }
     
     func gameOver() { print("Game Over") }
+    
 }
