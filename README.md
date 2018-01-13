@@ -1,4 +1,4 @@
-# SnakeiOS
+# SnakeiOS - Version 1.0
 
 A classic game of snake made entirely in Swift.
 
