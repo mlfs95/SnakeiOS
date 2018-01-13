@@ -15,6 +15,10 @@
 		A536929C2008FE3200DDC250 /* recordSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A536929B2008FE3200DDC250 /* recordSound.wav */; };
 		A536929E2008FE4500DDC250 /* looseSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A536929D2008FE4500DDC250 /* looseSound.wav */; };
 		A53692A22008FF9100DDC250 /* pauseSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = A53692A12008FF9100DDC250 /* pauseSound.wav */; };
+		A53692A420090DDE00DDC250 /* ArcadeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53692A320090DDE00DDC250 /* ArcadeManager.swift */; };
+		A53692A620090DF000DDC250 /* StoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53692A520090DF000DDC250 /* StoryManager.swift */; };
+		A53692A8200915F200DDC250 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53692A7200915F200DDC250 /* Level.swift */; };
+		A53692AA2009332A00DDC250 /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = A53692A92009332A00DDC250 /* Levels.plist */; };
 		A55A02A52001076F00DDFE8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02A42001076F00DDFE8C /* AppDelegate.swift */; };
 		A55A02A72001076F00DDFE8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55A02A62001076F00DDFE8C /* ViewController.swift */; };
 		A55A02AA2001076F00DDFE8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55A02A82001076F00DDFE8C /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 		A536929B2008FE3200DDC250 /* recordSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = recordSound.wav; sourceTree = "<group>"; };
 		A536929D2008FE4500DDC250 /* looseSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = looseSound.wav; sourceTree = "<group>"; };
 		A53692A12008FF9100DDC250 /* pauseSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pauseSound.wav; sourceTree = "<group>"; };
+		A53692A320090DDE00DDC250 /* ArcadeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeManager.swift; sourceTree = "<group>"; };
+		A53692A520090DF000DDC250 /* StoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryManager.swift; sourceTree = "<group>"; };
+		A53692A7200915F200DDC250 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		A53692A92009332A00DDC250 /* Levels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		A55A02A12001076F00DDFE8C /* Snake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55A02A42001076F00DDFE8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A55A02A62001076F00DDFE8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +109,7 @@
 		A55A02A32001076F00DDFE8C /* Snake */ = {
 			isa = PBXGroup;
 			children = (
-				A55A02C020028D3F00DDFE8C /* Modal */,
+				A55A02C020028D3F00DDFE8C /* Model */,
 				A55A02C120028D4B00DDFE8C /* View */,
 				A55A02C220028D5000DDFE8C /* Controller */,
 				A55A02C320028D6800DDFE8C /* Supporting Files */,
@@ -109,13 +117,14 @@
 			path = Snake;
 			sourceTree = "<group>";
 		};
-		A55A02C020028D3F00DDFE8C /* Modal */ = {
+		A55A02C020028D3F00DDFE8C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A55A02B8200271D000DDFE8C /* Snake.swift */,
 				A55A02BA2002787C00DDFE8C /* Food.swift */,
+				A53692A7200915F200DDC250 /* Level.swift */,
 			);
-			path = Modal;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A55A02C120028D4B00DDFE8C /* View */ = {
@@ -133,6 +142,8 @@
 				A55A02A62001076F00DDFE8C /* ViewController.swift */,
 				A55A02BE20028D3300DDFE8C /* GameViewController.swift */,
 				A55A02BC20027AA500DDFE8C /* GameManager.swift */,
+				A53692A320090DDE00DDC250 /* ArcadeManager.swift */,
+				A53692A520090DF000DDC250 /* StoryManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +155,7 @@
 				A52ACE9520057F65006AEF4E /* fonts */,
 				A55A02AB2001076F00DDFE8C /* Assets.xcassets */,
 				A55A02B02001076F00DDFE8C /* Info.plist */,
+				A53692A92009332A00DDC250 /* Levels.plist */,
 				A55A02A42001076F00DDFE8C /* AppDelegate.swift */,
 				A55A02C62002C00A00DDFE8C /* GameManagerDelegate.swift */,
 				A52ACE912003CEE3006AEF4E /* Enums.swift */,
@@ -212,6 +224,7 @@
 			files = (
 				A52ACE992006611B006AEF4E /* scoreboard.ttf in Resources */,
 				A55A02AF2001076F00DDFE8C /* LaunchScreen.storyboard in Resources */,
+				A53692AA2009332A00DDC250 /* Levels.plist in Resources */,
 				A52ACE9820057FC0006AEF4E /* LCDPHONE.ttf in Resources */,
 				A53692A22008FF9100DDC250 /* pauseSound.wav in Resources */,
 				A536929A2008FE0000DDC250 /* pointSound.wav in Resources */,
@@ -230,8 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53692A420090DDE00DDC250 /* ArcadeManager.swift in Sources */,
 				A55A02B9200271D000DDFE8C /* Snake.swift in Sources */,
 				A55A02BD20027AA500DDFE8C /* GameManager.swift in Sources */,
+				A53692A8200915F200DDC250 /* Level.swift in Sources */,
+				A53692A620090DF000DDC250 /* StoryManager.swift in Sources */,
 				A55A02A72001076F00DDFE8C /* ViewController.swift in Sources */,
 				A55A02C72002C00A00DDFE8C /* GameManagerDelegate.swift in Sources */,
 				A55A02BB2002787C00DDFE8C /* Food.swift in Sources */,

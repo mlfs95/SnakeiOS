@@ -31,3 +31,12 @@ public enum Direction {
     case down
     case left
 }
+
+/// Enum to inform what game mode the player will play
+///
+/// - arcade: if it is arcade mode
+/// - story: if it is story mode
+public enum Mode {
+    case arcade
+    case story
+}

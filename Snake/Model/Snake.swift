@@ -12,8 +12,7 @@ class Snake {
     
     // MARK: - VARIABLES -
     
-    // Snekes body coordinate.
-    // The first element of the array will always be the tail and the last will always be the head.
+    // Snakes body and head coordinate, full lenght of the snake and direction it is looking
     public var bodyX: [Int]!
     public var bodyY: [Int]!
     
@@ -24,13 +23,12 @@ class Snake {
     
     public var direction: Direction
     
-    // MARK: - CONSTRUCTOR -
-    
     // initializing the snake with a lenght of 3 in the start position
     init(){
         bodyX = [Int]()
         bodyY = [Int]()
         
+        // Sets up initial position
         bodyX.append(2)
         bodyY.append(9)
         

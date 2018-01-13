@@ -33,76 +33,128 @@
                                 <color key="textColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recorde:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvI-56-BYs">
-                                <rect key="frame" x="311" y="187.66666666666666" width="114" height="23"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUx-sg-l4O">
+                                <rect key="frame" x="360.66666666666669" y="277" width="15" height="23"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="23"/>
-                                <color key="textColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.333293438" green="0.33335629109999998" blue="0.33328947419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHF-km-sUy">
-                                <rect key="frame" x="360.66666666666669" y="225.66666666666666" width="15" height="23"/>
-                                <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="23"/>
-                                <color key="textColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E86-ae-aVj">
-                                <rect key="frame" x="300" y="329" width="136" height="29"/>
+                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E86-ae-aVj">
+                                <rect key="frame" x="336" y="192.66666666666666" width="64" height="29"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="17"/>
-                                <state key="normal" title="intermediário">
+                                <state key="normal" title="Vibora">
                                     <color key="titleColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="mediumButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zdz-mG-Nsx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro3-RI-rIk">
-                                <rect key="frame" x="496" y="328.66666666666669" width="91" height="29"/>
+                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro3-RI-rIk">
+                                <rect key="frame" x="502.66666666666674" y="192.66666666666666" width="91" height="29"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="17"/>
-                                <state key="normal" title="Veterano">
+                                <state key="normal" title="Cascavel">
                                     <color key="titleColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="difficultButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1jW-gf-vhx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-tt-gr5">
-                                <rect key="frame" x="149" y="329.66666666666669" width="91" height="29"/>
+                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMA-tt-gr5">
+                                <rect key="frame" x="157.66666666666666" y="192.66666666666666" width="61" height="29"/>
                                 <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="17"/>
-                                <state key="normal" title="Iniciante">
+                                <state key="normal" title="Jiboia">
                                     <color key="titleColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="easyButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JrE-aS-0i2"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgB-5a-GZb">
+                                <rect key="frame" x="540.66666666666663" y="277" width="15" height="23"/>
+                                <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="23"/>
+                                <color key="textColor" red="0.333293438" green="0.33335629109999998" blue="0.33328947419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHF-km-sUy">
+                                <rect key="frame" x="180.66666666666666" y="277" width="15" height="23"/>
+                                <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="23"/>
+                                <color key="textColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wc1-rR-qPP">
+                                <rect key="frame" x="283.66666666666669" y="263.66666666666669" width="169" height="38"/>
+                                <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="26"/>
+                                <state key="normal" title="Story mode">
+                                    <color key="titleColor" red="0.333293438" green="0.33335629109999998" blue="0.33328947419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SPM-DZ-CbV" kind="show" identifier="storySegue" id="M0K-Mr-Bzo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ay-Rr-tx2">
+                                <rect key="frame" x="271" y="187.66666666666666" width="194" height="39"/>
+                                <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="27"/>
+                                <state key="normal" title="Arcade mode">
+                                    <color key="titleColor" red="0.33329343795776367" green="0.33335629105567932" blue="0.33328947424888611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="arcadeModeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91d-ge-Pgq"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSw-VH-A7H">
+                                <rect key="frame" x="20" y="54" width="46" height="29"/>
+                                <fontDescription key="fontDescription" name="Lcdphone" family="lcd phone" pointSize="17"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.32152998447418213" green="0.32159090042114258" blue="0.32152613997459412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1F-nJ-fDt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.60739243030548096" green="0.79908162355422974" blue="0.049279659986495972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JHF-km-sUy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2zX-Hl-5eN"/>
                             <constraint firstItem="NMA-tt-gr5" firstAttribute="centerY" secondItem="E86-ae-aVj" secondAttribute="centerY" id="38G-Ll-dL2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E86-ae-aVj" secondAttribute="bottom" constant="56" id="5QK-eS-Svo"/>
-                            <constraint firstItem="JHF-km-sUy" firstAttribute="top" secondItem="zvI-56-BYs" secondAttribute="bottom" constant="15" id="9qN-e1-oBX"/>
+                            <constraint firstItem="E86-ae-aVj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="52z-Qe-ICo"/>
+                            <constraint firstItem="WgB-5a-GZb" firstAttribute="centerX" secondItem="Ro3-RI-rIk" secondAttribute="centerX" id="5fC-gZ-fim"/>
+                            <constraint firstItem="JHF-km-sUy" firstAttribute="centerY" secondItem="cUx-sg-l4O" secondAttribute="centerY" id="6Uj-lD-mX5"/>
+                            <constraint firstItem="cUx-sg-l4O" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ATN-5b-LaD"/>
                             <constraint firstItem="E86-ae-aVj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AqB-FJ-jCy"/>
+                            <constraint firstItem="Wc1-rR-qPP" firstAttribute="top" secondItem="2ay-Rr-tx2" secondAttribute="bottom" constant="37" id="GRi-lh-mma"/>
+                            <constraint firstItem="NMA-tt-gr5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-180" id="J2d-Zm-yhh"/>
+                            <constraint firstItem="gSw-VH-A7H" firstAttribute="centerY" secondItem="oFp-eU-23v" secondAttribute="centerY" id="JLK-Ct-mak"/>
                             <constraint firstItem="oFp-eU-23v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="KVr-rk-FeV"/>
-                            <constraint firstItem="zvI-56-BYs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VzU-b3-4hl"/>
-                            <constraint firstItem="zvI-56-BYs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-8" id="YNS-gK-Uu3"/>
+                            <constraint firstItem="JHF-km-sUy" firstAttribute="centerX" secondItem="NMA-tt-gr5" secondAttribute="centerX" id="O8W-q9-qFN"/>
+                            <constraint firstItem="gSw-VH-A7H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PKA-ob-pue"/>
+                            <constraint firstItem="2ay-Rr-tx2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SKq-IG-tAY"/>
+                            <constraint firstItem="cUx-sg-l4O" firstAttribute="top" secondItem="E86-ae-aVj" secondAttribute="bottom" constant="55.5" id="XTM-wE-mlv"/>
                             <constraint firstItem="Ro3-RI-rIk" firstAttribute="centerY" secondItem="E86-ae-aVj" secondAttribute="centerY" id="ZwH-yI-Nri"/>
+                            <constraint firstItem="Ro3-RI-rIk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="180" id="Zwh-jW-zxq"/>
                             <constraint firstItem="oFp-eU-23v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bUw-ae-ffZ"/>
-                            <constraint firstItem="Ro3-RI-rIk" firstAttribute="leading" secondItem="E86-ae-aVj" secondAttribute="trailing" constant="60" id="eES-5t-5vp"/>
-                            <constraint firstItem="E86-ae-aVj" firstAttribute="leading" secondItem="NMA-tt-gr5" secondAttribute="trailing" constant="60" id="gZF-Rl-vp6"/>
+                            <constraint firstItem="WgB-5a-GZb" firstAttribute="centerY" secondItem="cUx-sg-l4O" secondAttribute="centerY" id="gYe-m9-DT1"/>
+                            <constraint firstItem="Wc1-rR-qPP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="i8Q-4X-RbS"/>
+                            <constraint firstItem="2ay-Rr-tx2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ip2-vs-IPg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="kX0-lQ-JVl"/>
                     <connections>
-                        <outlet property="highScoreLabel" destination="JHF-km-sUy" id="NgB-PF-43g"/>
+                        <outlet property="arcadeModeButton" destination="2ay-Rr-tx2" id="Ruk-ak-NEg"/>
+                        <outlet property="backButton" destination="gSw-VH-A7H" id="ZSX-0D-Mpc"/>
+                        <outlet property="difficultButton" destination="Ro3-RI-rIk" id="dTW-wc-vva"/>
+                        <outlet property="difficultHighScoreLabel" destination="WgB-5a-GZb" id="3Bi-KB-mFR"/>
+                        <outlet property="easyButton" destination="NMA-tt-gr5" id="Xlw-JP-36f"/>
+                        <outlet property="easyHighScoreLabel" destination="JHF-km-sUy" id="PqT-K0-v02"/>
+                        <outlet property="mediumButton" destination="E86-ae-aVj" id="oWl-Kt-XLU"/>
+                        <outlet property="mediumHighScoreLabel" destination="cUx-sg-l4O" id="DOC-AF-hUo"/>
                         <outlet property="snakeLabel" destination="oFp-eU-23v" id="uSz-es-xVh"/>
-                        <segue destination="SPM-DZ-CbV" kind="show" identifier="GameSegue" id="zr9-2z-fxn"/>
+                        <outlet property="storyModeButton" destination="Wc1-rR-qPP" id="pcp-p9-mtr"/>
+                        <segue destination="SPM-DZ-CbV" kind="show" identifier="arcadeSegue" id="zr9-2z-fxn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="88" y="28"/>
+            <point key="canvasLocation" x="87.228260869565219" y="27.536231884057973"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="Fwm-IG-amS">
@@ -136,17 +188,6 @@
                                         <color key="textColor" red="0.60739243030548096" green="0.79908162355422974" blue="0.049279659986495972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="400" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-M1-THo">
-                                        <rect key="frame" x="41" y="157.66666666666666" width="49" height="38"/>
-                                        <color key="backgroundColor" red="0.24310663342475891" green="0.24315488338470459" blue="0.24310359358787537" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="F7m-Pr-1Tn"/>
-                                            <constraint firstAttribute="width" constant="49" id="sVl-rj-cMt"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.60739243030548096" green="0.79908162355422974" blue="0.049279659986495972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bce-1w-lhR">
                                         <rect key="frame" x="48" y="360" width="34" height="34"/>
                                         <constraints>
@@ -158,17 +199,6 @@
                                             <action selector="exitButtonPressed:" destination="SPM-DZ-CbV" eventType="touchUpInside" id="kJ9-DI-Xg7"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" editable="NO" text="0" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONV-dD-yht">
-                                        <rect key="frame" x="41" y="48" width="49" height="38"/>
-                                        <color key="backgroundColor" red="0.24310663342475891" green="0.24315488338470459" blue="0.24310359358787537" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="49" id="EgE-Kb-JaU"/>
-                                            <constraint firstAttribute="height" constant="38" id="pRt-OB-q4u"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.60739243030548096" green="0.79908162355422974" blue="0.049279659986495972" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0k-cQ-XTm">
                                         <rect key="frame" x="48" y="306" width="34" height="34"/>
                                         <state key="normal" title="Button" image="pauseButton"/>
@@ -176,24 +206,36 @@
                                             <action selector="pauseButtonPressed:" destination="SPM-DZ-CbV" eventType="touchUpInside" id="1OK-VC-QjM"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL6-4U-Ksa">
+                                        <rect key="frame" x="47.666666666666657" y="163.66666666666666" width="35" height="24.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="22"/>
+                                        <color key="textColor" red="0.59965860843658447" green="0.78720778226852417" blue="0.056579209864139557" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ian-QF-aON">
+                                        <rect key="frame" x="47.666666666666657" y="53.999999999999993" width="35" height="24.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="ScoreBoard" family="Score Board" pointSize="22"/>
+                                        <color key="textColor" red="0.59965860839999996" green="0.78720778229999999" blue="0.05657920986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24310663342475891" green="0.24315488338470459" blue="0.24310359358787537" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="wJg-M1-THo" firstAttribute="centerX" secondItem="rlM-wG-mcG" secondAttribute="centerX" id="4bz-FG-CiN"/>
-                                    <constraint firstItem="wJg-M1-THo" firstAttribute="top" secondItem="0Bv-ir-VpD" secondAttribute="bottom" constant="2" id="BwT-Uv-IKT"/>
                                     <constraint firstItem="bce-1w-lhR" firstAttribute="top" secondItem="w0k-cQ-XTm" secondAttribute="bottom" constant="20" id="C3l-dS-gBt"/>
+                                    <constraint firstItem="ian-QF-aON" firstAttribute="centerX" secondItem="NDi-OE-9lq" secondAttribute="centerX" id="Cjz-ME-EHh"/>
                                     <constraint firstItem="w0k-cQ-XTm" firstAttribute="centerX" secondItem="rlM-wG-mcG" secondAttribute="centerX" id="CqY-dV-pQP"/>
                                     <constraint firstItem="bce-1w-lhR" firstAttribute="centerX" secondItem="rlM-wG-mcG" secondAttribute="centerX" id="ErE-uZ-NVM"/>
-                                    <constraint firstItem="ONV-dD-yht" firstAttribute="top" secondItem="NDi-OE-9lq" secondAttribute="bottom" constant="2" id="NPu-Le-ECh"/>
                                     <constraint firstItem="NDi-OE-9lq" firstAttribute="centerX" secondItem="rlM-wG-mcG" secondAttribute="centerX" id="OVr-R4-yHK"/>
+                                    <constraint firstItem="ian-QF-aON" firstAttribute="top" secondItem="NDi-OE-9lq" secondAttribute="bottom" constant="8" id="QZk-AB-oHX"/>
+                                    <constraint firstItem="0Bv-ir-VpD" firstAttribute="top" secondItem="ian-QF-aON" secondAttribute="bottom" constant="27.333333333333343" id="RP1-gm-AWM"/>
                                     <constraint firstItem="w0k-cQ-XTm" firstAttribute="height" secondItem="bce-1w-lhR" secondAttribute="height" id="RPn-j0-gxJ"/>
+                                    <constraint firstItem="aL6-4U-Ksa" firstAttribute="centerX" secondItem="rlM-wG-mcG" secondAttribute="centerX" id="TvY-SH-kA1"/>
                                     <constraint firstAttribute="bottom" secondItem="bce-1w-lhR" secondAttribute="bottom" constant="20" id="ZWT-dx-R3X"/>
                                     <constraint firstItem="w0k-cQ-XTm" firstAttribute="width" secondItem="bce-1w-lhR" secondAttribute="width" id="cGP-H7-yg8"/>
-                                    <constraint firstItem="ONV-dD-yht" firstAttribute="centerX" secondItem="rlM-wG-mcG" secondAttribute="centerX" id="eQs-6F-VTt"/>
                                     <constraint firstItem="0Bv-ir-VpD" firstAttribute="centerX" secondItem="rlM-wG-mcG" secondAttribute="centerX" id="qIi-4a-ZK9"/>
                                     <constraint firstAttribute="width" constant="130" id="rrs-fK-tfX"/>
                                     <constraint firstItem="NDi-OE-9lq" firstAttribute="top" secondItem="rlM-wG-mcG" secondAttribute="top" constant="21" id="vGy-t0-afZ"/>
-                                    <constraint firstItem="0Bv-ir-VpD" firstAttribute="top" secondItem="ONV-dD-yht" secondAttribute="bottom" constant="20" id="wjp-Di-DZz"/>
+                                    <constraint firstItem="aL6-4U-Ksa" firstAttribute="top" secondItem="0Bv-ir-VpD" secondAttribute="bottom" constant="8" id="yaF-vh-E2D"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -212,15 +254,16 @@
                     <connections>
                         <outlet property="exitButton" destination="bce-1w-lhR" id="vR8-XI-14m"/>
                         <outlet property="gameView" destination="vgU-l9-KDU" id="edF-p2-hwf"/>
-                        <outlet property="highScoreTextView" destination="wJg-M1-THo" id="Rey-qo-o80"/>
+                        <outlet property="highScoreLabel" destination="aL6-4U-Ksa" id="Wja-EC-Ijg"/>
                         <outlet property="menuView" destination="rlM-wG-mcG" id="zoD-LH-wO7"/>
+                        <outlet property="objectiveLabel" destination="0Bv-ir-VpD" id="3pK-hr-WlJ"/>
                         <outlet property="pauseButton" destination="w0k-cQ-XTm" id="BsP-f0-G5b"/>
-                        <outlet property="pointsTextView" destination="ONV-dD-yht" id="jX5-T0-FET"/>
+                        <outlet property="pointsLabel" destination="ian-QF-aON" id="jqt-EV-JQf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uX-Ql-ZVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822.5" y="28.125"/>
+            <point key="canvasLocation" x="837.22826086956525" y="27.536231884057973"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l70-g7-zUf">
@@ -242,4 +285,7 @@
         <image name="exitButton" width="300" height="300"/>
         <image name="pauseButton" width="300" height="300"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="M0K-Mr-Bzo"/>
+    </inferredMetricsTieBreakers>
 </document>

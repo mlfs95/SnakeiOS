@@ -18,11 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Saves locally the high score
-        let highScore = UserDefaults.standard.integer(forKey: "highScore")
+        let easyHighScore = UserDefaults.standard.integer(forKey: "eastHighScore")
+        let mediumHighScore = UserDefaults.standard.integer(forKey: "mediumHighScore")
+        let hardHighScore = UserDefaults.standard.integer(forKey: "hardHighScore")
         
-        if highScore == 0 {
-            print("Creating the local highScore")
-            UserDefaults.standard.set(0, forKey: "highScore")
+        // Initialize if hasn't been already
+        if easyHighScore == 0 && mediumHighScore == 0 && hardHighScore == 0 {
+            UserDefaults.standard.set(0, forKey: "easyHighScore")
+            UserDefaults.standard.set(0, forKey: "mediumHighScore")
+            UserDefaults.standard.set(0, forKey: "hardHighScore")
         }
         
         return true

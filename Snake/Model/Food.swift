@@ -16,8 +16,6 @@ class Food {
     public var x: Int!
     public var y: Int!
     
-    // MARK: - CONSTRUCTOR -
-    
     // Initializing the food in the start position
     init(maxX: Int, maxY: Int) {
         
@@ -26,7 +24,6 @@ class Food {
     }
     
     //MARK: - METHODS -
-    
     
     /// Randomly chooses a new position for the food
     func getNextFood(maxX: Int, maxY: Int) {

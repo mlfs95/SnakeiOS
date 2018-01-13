@@ -12,8 +12,9 @@ import AVKit
 class GameViewController: UIViewController, GameManagerDelegate {
 
     // MARK: - OUTLETS -
-    @IBOutlet weak var pointsTextView: UITextView!
-    @IBOutlet weak var highScoreTextView: UITextView!
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var objectiveLabel: UILabel!
     @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var pauseButton: UIButton!
@@ -22,10 +23,15 @@ class GameViewController: UIViewController, GameManagerDelegate {
     // MARK: - VARIABLES -
     
     var imageSize: CGSize!
-    var imagesArray: [UIImageView]!
+    var temporaryImagesArray: [UIImageView]!
+    var permanentImagesArray: [UIImageView]!
     
     var isPressed = false
+    var gameManager: GameManager!
     
+    var gameMode: Mode!
+    
+    // Audio variables
     var pointAudioPlayer: AVAudioPlayer!
     var looseAudioPlayer: AVAudioPlayer!
     var pauseAudioPlayer: AVAudioPlayer!
@@ -36,11 +42,21 @@ class GameViewController: UIViewController, GameManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GameManager.singleton.delegate = self
+        // Initializes the right singleton as the gameManager
+        switch gameMode {
+            
+        case .arcade:
+            gameManager = ArcadeManager.singleton
+            
+        case .story:
+            gameManager = StoryManager.singleton
+            
+        default:
+            print("This should not have happened")
+        }
         
         // Set buttons correctly
         exitButton.isHidden = true
-        highScoreTextView.text = String(UserDefaults.standard.integer(forKey: "highScore"))
         
         // Creates gesture recognizers to change direction of snake
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.didSwipe))
@@ -64,19 +80,17 @@ class GameViewController: UIViewController, GameManagerDelegate {
         let maximumWidth = self.view.frame.width - menuView.frame.width - 10
         
         // Saving the CGSize of each block painted in the game
-        imageSize = CGSize(width: maximumWidth/CGFloat(GameManager.singleton.numColums), height: maximumHeight/CGFloat(GameManager.singleton.numRows))
+        imageSize = CGSize(width: maximumWidth/CGFloat(gameManager.numColums), height: maximumHeight/CGFloat(gameManager.numRows))
         
         // Adjusting the gameView size for each iPhone
-        let biggestCoordinate = coordinateToPixels(x: GameManager.singleton.numColums, y: GameManager.singleton.numRows)
+        let biggestCoordinate = coordinateToPixels(x: gameManager.numColums, y: gameManager.numRows)
         
         gameView.frame.size = CGSize(width: biggestCoordinate[0], height: biggestCoordinate[1])
         gameView.center = CGPoint(x: self.view.frame.width/2 + menuView.frame.width/2, y: self.view.frame.height/2)
         
         // Initializing array
-        imagesArray = [UIImageView]()
-        
-        // Calls the method to start the Game
-        GameManager.singleton.startGame()
+        temporaryImagesArray = [UIImageView]()
+        permanentImagesArray = [UIImageView]()
         
         // Gets the URL of the sounds
         let pointFileURL = NSURL.fileURL(withPath: Bundle.main.path(forResource: "pointSound", ofType: "wav")!)
@@ -97,6 +111,43 @@ class GameViewController: UIViewController, GameManagerDelegate {
         } catch {
             print("Couldn't initialize the sounds")
         }
+        
+        // Setups the game according to the right game mode
+        switch gameMode {
+            
+        case .arcade:
+            ArcadeManager.singleton.delegate = self
+            ArcadeManager.singleton.startGame()
+            objectiveLabel.text = "Melhor\nPontuação"
+            
+            // Gets the local high score for the right difficulty
+            switch ArcadeManager.singleton.difficulty {
+                
+            case .easy:
+                highScoreLabel.text = String(UserDefaults.standard.integer(forKey: "easyHighScore"))
+                
+            case .medium:
+                highScoreLabel.text = String(UserDefaults.standard.integer(forKey: "mediumHighScore"))
+                
+            case .hard:
+                highScoreLabel.text = String(UserDefaults.standard.integer(forKey: "hardHighScore"))
+                
+            default:
+                print("This should not have happened")
+            }
+            
+            
+        case .story:
+            StoryManager.singleton.delegate = self
+            StoryManager.singleton.startGame()
+            objectiveLabel.text = "Objetivo"
+            
+            // Sets the objective gap to the next level
+            highScoreLabel.text = String(StoryManager.singleton.level.maxPoints)
+            
+        default:
+            print("This should not have happened")
+        }
     }
     
     // MARK: - BUTTONS ACTION -
@@ -106,17 +157,17 @@ class GameViewController: UIViewController, GameManagerDelegate {
     /// - Parameter sender:
     @IBAction func pauseButtonPressed(_ sender: Any) {
         
-        if !GameManager.singleton.gameIsOver {
+        if !gameManager.gameIsOver {
             
             // When the button is to resume game
             if isPressed {
-                GameManager.singleton.resumeGame()
+                gameManager.resumeGame()
                 exitButton.isHidden = true
                 pauseButton.setImage(UIImage(named: "pauseButton"), for: .normal)
                 isPressed = false
                 
             } else { // When the button is to pause the game
-                GameManager.singleton.pauseGame()
+                gameManager.pauseGame()
                 exitButton.isHidden = false
                 pauseButton.setImage(UIImage(named: "resumeButton"), for: .normal)
                 isPressed = true
@@ -126,7 +177,8 @@ class GameViewController: UIViewController, GameManagerDelegate {
         } else { // When the button is to restart the game
             pauseButton.setImage(UIImage(named: "pauseButton"), for: .normal)
             exitButton.isHidden = true
-            GameManager.singleton.restartGame()
+            pointsLabel.text = "0"
+            gameManager.restartGame()
         }
         
     }
@@ -146,20 +198,21 @@ class GameViewController: UIViewController, GameManagerDelegate {
     @objc func didSwipe(swipe: UIGestureRecognizer) {
         if let swipeGesture = swipe as? UISwipeGestureRecognizer {
             
+            
             // changes the direction of the snake
             switch swipeGesture.direction {
                 
             case UISwipeGestureRecognizerDirection.up:
-                GameManager.singleton.changeDirection(directionToChange: .up)
+                gameManager.changeDirection(directionToChange: .up)
                 
             case UISwipeGestureRecognizerDirection.right:
-                GameManager.singleton.changeDirection(directionToChange: .right)
+                gameManager.changeDirection(directionToChange: .right)
                 
             case UISwipeGestureRecognizerDirection.down:
-                GameManager.singleton.changeDirection(directionToChange: .down)
+                gameManager.changeDirection(directionToChange: .down)
                 
             case UISwipeGestureRecognizerDirection.left:
-                GameManager.singleton.changeDirection(directionToChange: .left)
+                gameManager.changeDirection(directionToChange: .left)
             
             default:
                 break
@@ -186,44 +239,96 @@ class GameViewController: UIViewController, GameManagerDelegate {
     /// Called whenever a new frame began to be made
     func willMakeNewFrame() {
         
-        // Removes all old frames
-        self.imagesArray.forEach { image in
+        // Removes last frame temporary images
+        self.temporaryImagesArray.forEach { image in
             image.removeFromSuperview()
         }
         
-        imagesArray.removeAll()
+        temporaryImagesArray.removeAll()
     }
     
-    /// Draws the right image in the screen
+    /// Draws a image that will be out in the next frame
     ///
     /// - Parameters:
     ///   - x: x coordinate to draw in the map
     ///   - y: y coordinate to draw in the map
     ///   - image: name of the image that should be draw
-    func draw(x: Int, y: Int, image: String) {
+    func drawTemporaryImage(x: Int, y: Int, image: String) {
         
         let coordinate = coordinateToPixels(x: x, y: y)
         
-        imagesArray.append(UIImageView(image: UIImage(named: image)))
-        imagesArray.last?.frame = CGRect(origin: CGPoint(x: coordinate[0], y: coordinate[1]), size: imageSize)
-        self.gameView.addSubview(self.imagesArray.last!)
+        temporaryImagesArray.append(UIImageView(image: UIImage(named: image)))
+        temporaryImagesArray.last?.frame = CGRect(origin: CGPoint(x: coordinate[0], y: coordinate[1]), size: imageSize)
+        self.gameView.addSubview(self.temporaryImagesArray.last!)
+    }
+    
+    
+    /// Draws a image that won't be out for a good amount of frames
+    ///
+    /// - Parameters:
+    ///   - x: x coordinate to draw in the map
+    ///   - y: y coordinate to draw in the map
+    ///   - image: name of the image that should be draw
+    func drawPermanentImage(x: Int, y: Int, image: String) {
+        
+        let coordinate = coordinateToPixels(x: x, y: y)
+        
+        permanentImagesArray.append(UIImageView(image: UIImage(named: image)))
+        permanentImagesArray.last?.frame = CGRect(origin: CGPoint(x: coordinate[0], y: coordinate[1]), size: imageSize)
+        self.gameView.addSubview(self.permanentImagesArray.last!)
     }
     
     /// Called when the snake ate the food
     func ateFood() {
-        pointsTextView.text = String(GameManager.singleton.score)
+        pointsLabel.text = String(gameManager.score)
         pointAudioPlayer.play()
+    }
+    
+    /// Called when the player passed the level in Story mode
+    func newLevel() {
+        
+        pointsLabel.text = "0"
+        highScoreLabel.text = String(StoryManager.singleton.level.maxPoints)
+        recordAudioPlayer.play()
+        
+        // Removes old map images
+        self.permanentImagesArray.forEach { image in
+            image.removeFromSuperview()
+        }
+        
+        permanentImagesArray.removeAll()
     }
     
     /// Called when the game ends
     func gameOver() {
         
-        // Checks if the high score was beaten
-        if UserDefaults.standard.integer(forKey: "highScore") < GameManager.singleton.score {
-            UserDefaults.standard.set(GameManager.singleton.score, forKey: "highScore")
-            highScoreTextView.text = String(GameManager.singleton.score)
-            recordAudioPlayer.play()
+        if gameMode == .arcade {
+            
+            // Checks if the high score was beaten
+            if Int(highScoreLabel.text!)! < ArcadeManager.singleton.score {
+                
+                switch ArcadeManager.singleton.difficulty {
+                    
+                case .easy:
+                    UserDefaults.standard.set(ArcadeManager.singleton.score, forKey: "easyHighScore")
+                    
+                case .medium:
+                    UserDefaults.standard.set(ArcadeManager.singleton.score, forKey: "mediumHighScore")
+                    
+                case .hard:
+                    UserDefaults.standard.set(ArcadeManager.singleton.score, forKey: "hardHighScore")
+                    
+                default:
+                    print("This should not have happended")
+                }
+                highScoreLabel.text = String(ArcadeManager.singleton.score)
+                recordAudioPlayer.play()
+            } else {
+                
+                looseAudioPlayer.play()
+            }
         } else {
+            
             looseAudioPlayer.play()
         }
         

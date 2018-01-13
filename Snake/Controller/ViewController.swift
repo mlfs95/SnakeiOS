@@ -12,8 +12,22 @@ import AVKit
 class ViewController: UIViewController {
 
     // MARK: - OUTLETS -
-    @IBOutlet weak var highScoreLabel: UILabel!
+    
+    // Game title
     @IBOutlet weak var snakeLabel: UILabel!
+    
+    // Game mode menu buttons
+    @IBOutlet weak var arcadeModeButton: UIButton!
+    @IBOutlet weak var storyModeButton: UIButton!
+    
+    // Arcade difficulty menu buttons and labels
+    @IBOutlet weak var difficultHighScoreLabel: UILabel!
+    @IBOutlet weak var mediumHighScoreLabel: UILabel!
+    @IBOutlet weak var easyHighScoreLabel: UILabel!
+    @IBOutlet weak var difficultButton: UIButton!
+    @IBOutlet weak var mediumButton: UIButton!
+    @IBOutlet weak var easyButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK: - VARIABLES -
     
@@ -39,42 +53,120 @@ class ViewController: UIViewController {
         }
         
         // Starts fadeIn/FadeOut animation of the label's title
-        startFadeIn()
+        startSnakeFadeIn()
     }
     
+    // Every time this view appear it refreshes the high scores
     override func viewDidAppear(_ animated: Bool) {
-        highScoreLabel.text = String(UserDefaults.standard.integer(forKey: "highScore"))
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        easyHighScoreLabel.text = String(UserDefaults.standard.integer(forKey: "easyHighScore"))
+        mediumHighScoreLabel.text = String(UserDefaults.standard.integer(forKey: "mediumHighScore"))
+        difficultHighScoreLabel.text = String(UserDefaults.standard.integer(forKey: "hardHighScore"))
     }
     
-    func startFadeOut() {
+    // MARK: - ANIMATION METHODS -
+    
+    /// Animation of the game title fading out
+    func startSnakeFadeOut() {
         
         UIView.animate(withDuration: 1, animations: {
             self.snakeLabel.alpha = 0
             
         }) { (true) in
             
-            self.startFadeIn()
+            self.startSnakeFadeIn()
         }
     }
     
-    func startFadeIn() {
+    /// Animation of the fame title fading in
+    func startSnakeFadeIn() {
         
         UIView.animate(withDuration: 1, animations: {
             self.snakeLabel.alpha = 1
             
         }) { (true) in
             
-            self.startFadeOut()
+            self.startSnakeFadeOut()
         }
     }
 
     // MARK: - BUTTON ACTION -
     
+    /// Fade out and fade in animation of the buttons in the screen appearing the difficulties of the arcade mode
+    ///
+    /// - Parameter sender:
+    @IBAction func arcadeModeButtonPressed(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.arcadeModeButton.alpha = 0
+            self.storyModeButton.alpha = 0
+        }) { (true) in
+            
+            self.arcadeModeButton.isHidden = true
+            self.storyModeButton.isHidden = true
+            
+            self.easyHighScoreLabel.isHidden = false
+            self.mediumHighScoreLabel.isHidden = false
+            self.difficultHighScoreLabel.isHidden = false
+            
+            self.easyButton.isHidden = false
+            self.mediumButton.isHidden = false
+            self.difficultButton.isHidden = false
+            
+            self.backButton.isHidden = false
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.easyHighScoreLabel.alpha = 1
+                self.mediumHighScoreLabel.alpha = 1
+                self.difficultHighScoreLabel.alpha = 1
+                
+                self.easyButton.alpha = 1
+                self.mediumButton.alpha = 1
+                self.difficultButton.alpha = 1
+                
+                self.backButton.alpha = 1
+            })
+        }
+    }
+    
+    
+    /// Fade out and fade in animation of the buttons in the screen appearing the initial menu
+    ///
+    /// - Parameter sender:
+    @IBAction func backButtonPressed(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.easyHighScoreLabel.alpha = 0
+            self.mediumHighScoreLabel.alpha = 0
+            self.difficultHighScoreLabel.alpha = 0
+            
+            self.easyButton.alpha = 0
+            self.mediumButton.alpha = 0
+            self.difficultButton.alpha = 0
+            
+            self.backButton.alpha = 0
+            
+        }) { (true) in
+            
+            self.arcadeModeButton.isHidden = false
+            self.storyModeButton.isHidden = false
+            
+            self.easyHighScoreLabel.isHidden = true
+            self.mediumHighScoreLabel.isHidden = true
+            self.difficultHighScoreLabel.isHidden = true
+            
+            self.easyButton.isHidden = true
+            self.mediumButton.isHidden = true
+            self.difficultButton.isHidden = true
+            
+            self.backButton.isHidden = true
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.arcadeModeButton.alpha = 1
+                self.storyModeButton.alpha = 1
+            })
+        }
+    }
     /// Called when the easy difficulty button is selected
     ///
     /// - Parameter sender:
@@ -106,9 +198,28 @@ class ViewController: UIViewController {
     /// - Parameter difficulty: the difficulty of the new game selected by the user
     func startGame(difficulty: Difficulty) {
         
-        GameManager.singleton.difficulty = difficulty
+        ArcadeManager.singleton.difficulty = difficulty
         
-        self.performSegue(withIdentifier: "GameSegue", sender: nil)
+        self.performSegue(withIdentifier: "arcadeSegue", sender: nil)
+    }
+    
+    /// Teels the GameViewController wich game mode the player will play
+    ///
+    /// - Parameters:
+    ///   - segue:
+    ///   - sender: 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let gameViewController = segue.destination as? GameViewController {
+            
+            if segue.identifier == "storySegue" {
+                gameViewController.gameMode = .story
+            }
+            
+            if segue.identifier == "arcadeSegue" {
+                gameViewController.gameMode = .arcade
+            }
+        }
     }
 }
 
