@@ -64,3 +64,8 @@ In this mode you have to reach a certain amount of points each level to go to th
 - Controls which gameMode the player has choosen and tells the GameViewController.
 - Makes animations in the snakeLabel and in the transitions between menus.
 - Controls which difficulty the player has choosen in Arcade Mode and tells the GameViewController.
+
+## Special Thanks
+
+- LittleRobotSoundFactory - For some of the SFX in the game.
+- Rolemusic - For the main music in the game.
